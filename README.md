@@ -78,11 +78,15 @@ Reference: https://www.postgresql.org/docs/current/static/sql-createindex.html#S
 
 ### Build
     
-    docker build -t pg-reindex-concurrently .
+    docker build -t hartmutcouk/pg-reindex-concurrently .
     
 ### Run
 
     docker run -it --rm -e "TABLES=table1,table2" -e "HOST=localhost" -e "USER=dbuser" -e "MINUTES=180" -e "PASSWORD=secret" -e "DATABASE=dbname" -e "PRINT_TIMESTAMPS=1" -e "DRY_RUN=True" -e "PAUSE=0" --name pg-reindex-concurrently-job-01 pg-reindex-concurrently
+    
+### Dockerhub
+
+Public docker image available on [Docker Hub](https://hub.docker.com/r/hartmutcouk/pg-reindex-concurrently/): `hartmutcouk/pg-reindex-concurrently`
     
 
 ## Alternative -> PG Extension 'pg_repack'
@@ -104,8 +108,8 @@ Since ~January 2018 RDS does support the 'pg_repack' extension with v1.4.2 - whi
 
 
 ## TODOs
-- allow to start for a whole database and|or schema
-- provide public docker image on https://hub.docker.com 
+- [x] provide public docker image on https://hub.docker.com 
+- [ ] allow to start for a whole database and|or schema
 
 
 ## Credits
